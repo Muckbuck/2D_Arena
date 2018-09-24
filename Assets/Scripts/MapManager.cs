@@ -56,7 +56,7 @@ namespace Manager
                             break;
                         case 'x':
                             Instantiate(groundBlock, position, this.transform.rotation);
-                            //HeroBehavior hero = new HeroBehavior();
+                            //Play = new HeroBehavior();
                             //hero.SpawnHero(new Vector3(x, y,1));
                             break;
                         

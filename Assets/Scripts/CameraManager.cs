@@ -7,23 +7,25 @@ namespace Manager
     public class CameraManager : MonoBehaviour
     {
 
-        GameObject[] hero;
+        GameObject cameraObject;    
         Transform cameraTransform;
         Vector2 heroPosition;
         // Use this for initialization
-        void Start()
-        {
-            //hero = GameObject.FindGameObjectsWithTag("Hero");
-            //cameraTransform = GetComponent<Transform>();
 
+        public void SetupCamera()
+        {
+            cameraObject = new GameObject();
+            cameraObject.AddComponent<Camera>();
+            cameraObject.GetComponent<Camera>().nearClipPlane = -1f;
+            cameraObject.GetComponent<Camera>().nearClipPlane = 100;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SetCameraToPlayerPosition(Vector3 playerPosition)
         {
-
-            //cameraTransform.position = hero[0].GetComponent<Transform>().position;
+            cameraTransform = cameraObject.GetComponent<Transform>();
+            cameraTransform.position = cameraObject.GetComponent<Transform>().position;
         }
+
     }
 }
 

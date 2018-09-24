@@ -7,16 +7,12 @@ namespace Manager
 {
     public class PlayerManager : MonoBehaviour
     {
-
-
         public float speed;
         public Sprite heroSprite;
         public Dictionary<string, UnityEngine.KeyCode> movementScheme;
         Rigidbody2D rigidBody;
         GameObject playerObject;
         Transform trans;
-
-
 
         public void SpawnPlayer(Vector3 position)
         {
@@ -62,13 +58,7 @@ namespace Manager
             else if (Input.GetKey(movementScheme["right"]))
             {
                 playerObject.GetComponent<Transform>().Translate(forceRight * Time.deltaTime);
-            }
-
-            
+            } 
         }
-
-     
-
-      
     }
 }
